@@ -26,6 +26,9 @@ public class StaffCsv implements Serializable {
   @JsonProperty("名")
   String firstName;
 
+  @JsonProperty("ミドルネーム")
+  String middleName;
+
   @JsonProperty("姓")
   String lastName;
 

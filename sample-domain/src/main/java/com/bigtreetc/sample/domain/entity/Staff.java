@@ -29,6 +29,9 @@ public class Staff extends DomaEntityImpl {
   // 名
   String firstName;
 
+  // ミドルネーム
+  String middleName;
+
   // 姓
   String lastName;
 
