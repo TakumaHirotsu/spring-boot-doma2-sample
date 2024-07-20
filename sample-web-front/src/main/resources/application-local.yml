@@ -4,9 +4,12 @@ spring:
       on-profile: local
   messages:
     cache-duration: -1
-# it/sample-web-frontのテストが通らないためコメントアウト
-#  thymeleaf:
-#    prefix: file:src/main/resources/templates/
+  # it/sample-web-frontのテストが通らないためコメントアウト
+  thymeleaf:
+    # prefix: file:src/main/resources/templates/
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false # デバッグ中はキャッシュを無効にすることが推奨されます
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/spring-boot-doma2-sample?useSSL=false
@@ -15,7 +18,8 @@ spring:
   web:
     resources:
       # キャッシュの無効化
-      static-locations: file:src/main/resources/public/
+      # static-locations: file:src/main/resources/public/
+      static-locations: classpath:/public/
   flyway:
     enable: true
     baseline-on-migrate: true
