@@ -37,6 +37,7 @@
                         </div>
                         <div class="card-body">
                             <input th:replace="~{fragments/inputField :: input ('text', '名', 'firstName')}" />
+                            <input th:replace="~{fragments/inputField :: input ('text', 'ミドルネーム', 'middleName')}" />
                             <input th:replace="~{fragments/inputField :: input ('text', '姓', 'lastName')}" />
                             <input th:replace="~{fragments/inputField :: input ('password', 'パスワード', 'password')}" />
                             <input th:replace="~{fragments/inputField :: input ('password', '確認パスワード', 'passwordConfirm')}" />

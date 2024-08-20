@@ -14,6 +14,8 @@ public class SearchStaffForm extends BaseSearchForm {
 
   String firstName;
 
+  String middleName;
+
   String lastName;
 
   String email;

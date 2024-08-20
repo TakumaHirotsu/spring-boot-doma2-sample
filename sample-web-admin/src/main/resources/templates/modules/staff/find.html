@@ -39,6 +39,7 @@
                         </div>
                         <div class="card-body">
                             <input th:replace="~{fragments/searchInputField :: input ('text', '姓', 'lastName')}" />
+                            <input th:replace="~{fragments/searchInputField :: input ('text', 'ミドルネーム', 'middleName')}" />
                             <input th:replace="~{fragments/searchInputField :: input ('text', '名', 'firstName')}" />
                             <input th:replace="~{fragments/searchInputField :: input ('text', 'メールアドレス', 'email')}" />
                         </div>
@@ -74,7 +75,7 @@
                                     <td class="col-2">
                                         <a th:href="@{/staffs/show/__${staff.id}__}" th:text="${staff.id}" />
                                     </td>
-                                    <td class="col" th:text="${staff.lastName + ' ' + staff.firstName}" />
+                                    <td class="col" th:text="${staff.lastName + ' ' + staff.middleName + ' ' + staff.firstName}" />
                                     <td class="col" th:text="${staff.email}" />
                                     <td class="col" th:text="${staff.tel}" />
                                 </tr>
