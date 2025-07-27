@@ -1,5 +1,10 @@
 apply plugin: "com.google.cloud.tools.jib"
 
+bootJar {
+    archiveFileName = "app.jar"
+    launchScript()
+}
+
 dependencies {
     implementation project(":sample-web-base")
     testImplementation project(":sample-domain").sourceSets.test.output
