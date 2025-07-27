@@ -4,6 +4,8 @@ spring:
       on-profile: local
   messages:
     cache-duration: -1
+    basename: messages
+    fallback-to-system-locale: false  # システムのロケールを使わないようにする（mac/linux/aws関わらず固定するため）
   thymeleaf:
     # prefix: file:src/main/resources/templates/
     prefix: classpath:/templates/
@@ -14,12 +16,19 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/spring-boot-doma2-sample?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: passw0rd
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://spring-boot-doma2-database.chhzovfk7ulx.ap-northeast-1.rds.amazonaws.com:3306/spring_boot_doma2_sample?useSSL=false
+#    username: hirotsu2625
+#    password:
   web:
+    locale: ja # 常に日本語ロケール
+    locale-resolver: fixed # リクエストヘッダー見ない
     resources:
       # キャッシュの無効化
       static-locations: file:src/main/resources/public/
   flyway:
-    enable: true
+    enabled: false
     baseline-on-migrate: true
   mail:
     host: 127.0.0.1
@@ -48,3 +57,10 @@ application:
     allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept, X-XSRF-TOKEN"
     allowedMethods: "POST, GET, PUT, OPTIONS, DELETE"
     allowedOrigins: "*" # CORSを許可するドメイン名を指定する
+
+# ヘルスチェックon
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
