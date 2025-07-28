@@ -18,6 +18,9 @@ public class StaffForm extends BaseForm {
   // 名
   @NotEmpty String firstName;
 
+  // ミドルネーム
+  @NotEmpty String middleName;
+
   // 姓
   @NotEmpty String lastName;
 
